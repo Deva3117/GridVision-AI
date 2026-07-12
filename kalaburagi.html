@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Kalaburagi Substation</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+    <div id="sidebar" class="sidebar">
+
+<a href="#" onclick="showSection('dashboard')">🏠 Dashboard</a>
+
+<a href="#" onclick="showSection('breakers')">⚡ Breakers</a>
+
+<a href="#" onclick="showSection('diagram')">📈 One Line Diagram</a>
+
+<a href="#" onclick="showSection('notifications')">🔔 Notifications</a>
+
+<a href="#" onclick="showSection('events')">📋 Event Log</a>
+
+<a href="#" onclick="showSection('ai')">🤖 AI Prediction</a>
+
+<a href="#" onclick="showSection('settings')">⚙ Settings</a>
+
+</div>
+
+<header class="topbar">
+
+    <div class="left">
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+        <h2>GridVision AI</h2>
+
+    </div>
+
+    <div class="right">
+
+        <span>🔔</span>
+
+        <span>👤 Admin</span>
+
+    </div>
+
+</header>
+
+<div id="dashboard" class="section">
+
+<h1 id="stationTitle">Kalaburagi 220/110 kV Substation</h1>
+
+<hr>
+
+<h2>Station Dashboard</h2>
+
+<div class="dashboard-cards">
+
+<div class="card">
+<h3>⚡ Voltage</h3>
+<p id="voltage">Loading...</p>
+</div>
+<div class="card">
+<h3>🔌 Current</h3>
+<p id="current">Loading...</p>
+</div>
+
+<div class="card">
+    <h3>Frequency</h3>
+<p id="frequency">Loading...</p>
+</div>
+
+<div class="card">
+<h3>🌡 Temperature</h3>
+<p id="temperature">Loading...</p>
+</div>
+
+<div class="card">
+<h3>🟢 Status</h3>
+<p id="status">Loading...</p>
+</div>
+
+<div class="card">
+<h3>⚙ System Health</h3>
+<p>Healthy</p>
+</div>
+
+</div>
+
+<hr>
+
+<h2>Breakers</h2>
+
+<div class="breaker-container">
+
+<div class="breaker-card" onclick="window.location.href='breaker1.html'">
+
+<h3>Breaker 1</h3>
+
+<p>Status : 🟢 ON</p>
+
+<p>Voltage : 220 kV</p>
+
+<p>Current : 560 A</p>
+
+<p>Temperature : 34°C</p>
+
+</div>
+
+<div class="breaker-card">
+<h3>Breaker 2</h3>
+<p>Status : 🔴 OFF</p>
+<p>Voltage : 0 kV</p>
+<p>Current : 0 A</p>
+<p>Temperature : 30°C</p>
+</div>
+
+<div class="breaker-card">
+<h3>Breaker 3</h3>
+<p>Status : 🟡 TRIP</p>
+<p>Voltage : 220 kV</p>
+<p>Current : 0 A</p>
+<p>Temperature : 39°C</p>
+</div>
+
+<div class="breaker-card">
+<h3>Breaker 4</h3>
+<p>Status : 🟢 ON</p>
+<p>Voltage : 220 kV</p>
+<p>Current : 545 A</p>
+<p>Temperature : 33°C</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="breakers" class="section" style="display:none;">
+    <h2>⚡ Breakers</h2>
+    <p>Breaker 1 - ON</p>
+    <p>Breaker 2 - OFF</p>
+    <p>Breaker 3 - TRIP</p>
+    <p>Breaker 4 - ON</p>
+</div>
+
+    <div id="diagram" class="section" style="display:none;">
+
+<h2>📈 One Line Diagram</h2>
+
+<pre>
+220 kV Incoming Line
+                   │
+        Incoming Circuit Breaker
+                   │
+               Isolator
+                   │
+══════════════ 220 kV BUS BAR ══════════════
+                   │
+        220/110 kV Power Transformer
+                   │
+══════════════ 110 kV BUS BAR ══════════════
+          │            │            │
+      🟢 Breaker 1  🔴 Breaker 2  🟡 Breaker 3
+          │            │            │
+      Feeder A     Feeder B     Feeder C
+
+</pre>
+
+</div>
+</div>
+
+<div id="notifications" class="section" style="display:none;">
+    <h2>🔔 Notifications</h2>
+    <p>Breaker 3 Tripped</p>
+    <div class="notification high">
+    <h3>🔴 Breaker 3 Tripped</h3>
+    <p>Time : 10:45 AM</p>
+    <p>Priority : HIGH</p>
+</div>
+
+<div class="notification medium">
+    <h3>🟡 Transformer Temperature High</h3>
+    <p>Time : 11:10 AM</p>
+    <p>Priority : MEDIUM</p>
+</div>
+
+<div class="notification low">
+    <h3>🟢 Communication Restored</h3>
+    <p>Time : 11:30 AM</p>
+    <p>Priority : LOW</p>
+</div>
+
+</div>
+
+<div id="events" class="section" style="display:none;">
+    <h2>📋 Event Log</h2>
+   <table class="event-table">
+
+<tr>
+<th>Time</th>
+<th>Event</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>10:30 AM</td>
+<td>Breaker 1 Closed</td>
+<td>✅ Success</td>
+</tr>
+
+<tr>
+<td>10:45 AM</td>
+<td>Breaker 3 Tripped</td>
+<td>⚠ Warning</td>
+</tr>
+
+<tr>
+<td>11:10 AM</td>
+<td>Transformer Temperature High</td>
+<td>🔴 Alert</td>
+</tr>
+
+<tr>
+<td>11:25 AM</td>
+<td>Communication Restored</td>
+<td>✅ Normal</td>
+</tr>
+
+</table>
+</div>
+
+<div id="ai" class="section" style="display:none;">
+    <h2>🤖 AI Prediction</h2>
+   <div class="ai-card">
+
+<h3>⚠ Fault Prediction</h3>
+
+<p>Breaker 3 has an 82% probability of tripping within the next 24 hours.</p>
+
+</div>
+
+<div class="ai-card">
+
+<h3>🌡 Temperature Analysis</h3>
+
+<p>Transformer temperature is increasing gradually. Cooling inspection recommended.</p>
+
+</div>
+
+<div class="ai-card">
+
+<h3>📈 Load Forecast</h3>
+
+<p>Expected Load (Next 6 Hours): 610 A</p>
+
+</div>
+
+<div class="ai-card">
+
+<h3>🛠 AI Recommendation</h3>
+
+<p>Inspect Breaker 3 and Transformer Cooling System during the next maintenance window.</p>
+
+</div>
+</div>
+
+<div id="settings" class="section" style="display:none;">
+    <h2>⚙ Settings</h2>
+   <div class="settings-card">
+
+<h3>🌙 Theme</h3>
+
+<select>
+<option>Dark Mode</option>
+<option>Light Mode</option>
+</select>
+
+</div>
+
+<div class="settings-card">
+
+<h3>🌐 Language</h3>
+
+<select>
+<option>English</option>
+<option>Kannada</option>
+<option>Hindi</option>
+</select>
+
+</div>
+
+<div class="settings-card">
+
+<h3>⚡ Units</h3>
+
+<select>
+<option>kV / A / Hz</option>
+<option>V / A / Hz</option>
+</select>
+
+</div>
+
+<div class="settings-card">
+
+<h3>👤 User</h3>
+
+<p>Administrator</p>
+
+</div>
+
+<div class="settings-card">
+
+<h3>ℹ System Version</h3>
+
+<p>GridVision AI v1.0</p>
+
+</div>
+</div>
+
+<script src="../js/kalaburagi.js"></script>
+
+</body>
+
+</html>

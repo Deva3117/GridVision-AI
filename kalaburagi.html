@@ -118,11 +118,13 @@
 </div>
 
 <div class="breaker-card">
-<h3>Breaker 3</h3>
-<p>Status : 🟡 TRIP</p>
-<p>Voltage : 220 kV</p>
-<p>Current : 0 A</p>
-<p>Temperature : 39°C</p>
+    <h3>Breaker 3</h3>
+
+    <p id="breaker3Status">Status : 🟢 ON</p>
+
+    <p>Voltage : 220 kV</p>
+    <p>Current : 0 A</p>
+    <p>Temperature : 39°C</p>
 </div>
 
 <div class="breaker-card">
@@ -173,7 +175,7 @@
 
 <div id="notifications" class="section" style="display:none;">
     <h2>🔔 Notifications</h2>
-    <p>Breaker 3 Tripped</p>
+    <p id="notificationText">Loading Notifications...</p>
     <div class="notification high">
     <h3>🔴 Breaker 3 Tripped</h3>
     <p>Time : 10:45 AM</p>
@@ -211,9 +213,9 @@
 </tr>
 
 <tr>
-<td>10:45 AM</td>
-<td>Breaker 3 Tripped</td>
-<td>⚠ Warning</td>
+<td id="eventTime">--:--</td>
+<td id="eventMessage">Waiting for events...</td>
+<td id="eventStatus">🟢 Normal</td>
 </tr>
 
 <tr>
@@ -237,7 +239,7 @@
 
 <h3>⚠ Fault Prediction</h3>
 
-<p>Breaker 3 has an 82% probability of tripping within the next 24 hours.</p>
+<p id="prediction">Loading AI Prediction...</p>
 
 </div>
 

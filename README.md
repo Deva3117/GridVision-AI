@@ -58,10 +58,22 @@ A real-time dashboard displaying:
 - Mobile Application
 - Digital Twin Enhancement
 
+- ## Dashboard Preview
+
+![Dashboard](images/dashboard.png)
+
+![AI Prediction](images/ai.png)
+
+![Notifications](images/notifications.png)
+
+![Event Log](images/events.png)
+
 ## 👨‍💻 Developed By
 
-Revathi S
+Deva Dharshini
 
 Electrical and Electronics Engineering
+
+
 
 GridVision AI Project – 2026

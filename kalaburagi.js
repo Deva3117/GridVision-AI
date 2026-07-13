@@ -124,6 +124,54 @@ async function loadDashboard() {
     document.getElementById("temperature").textContent = data.temperature;
 
     document.getElementById("status").textContent = data.status;
+
+   if (data.breaker3 === "TRIPPED") {
+    document.getElementById("breaker3Status").textContent = "Status : 🔴 TRIPPED";
+} else {
+    document.getElementById("breaker3Status").textContent = "Status : 🟢 ON";
+}
+
+if (data.breaker3 === "TRIPPED") {
+    document.getElementById("prediction").textContent =
+        "⚠ Breaker 3 has TRIPPED. Immediate maintenance required.";
+} else {
+    document.getElementById("prediction").textContent =
+        "✅ System Healthy. No fault predicted.";
+}
+
+if (data.breaker3 === "TRIPPED") {
+    document.getElementById("notificationText").textContent =
+        "🔴 Breaker 3 Tripped - HIGH Priority";
+} else {
+    document.getElementById("notificationText").textContent =
+        "🟢 No Active Alerts";
+}
+
+if (data.breaker3 === "TRIPPED") {
+
+    const now = new Date();
+
+    document.getElementById("eventTime").textContent =
+        now.toLocaleTimeString();
+
+    document.getElementById("eventMessage").textContent =
+        "Breaker 3 Tripped";
+
+    document.getElementById("eventStatus").textContent =
+        "🔴 Fault";
+
+} else {
+
+    document.getElementById("eventTime").textContent =
+        "--:--";
+
+    document.getElementById("eventMessage").textContent =
+        "No Recent Events";
+
+    document.getElementById("eventStatus").textContent =
+        "🟢 Normal";
+}
+
 }
 
 // Load data immediately
